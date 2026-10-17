@@ -1,0 +1,23 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Aseko Display RS485",
+        "description": "Listen for a Waveshare (or similar) TCP bridge on the ASIN Display RS485 bus. Use a free port (default 47525) so it does not clash with Aseko Local on 47524.",
+        "data": {
+          "host": "Bind address",
+          "port": "TCP port",
+          "allowed_host": "Allowed bridge IP (recommended)"
+        },
+        "data_description": {
+          "host": "Where Home Assistant listens. Usually 0.0.0.0.",
+          "port": "Must match the bridge destination port.",
+          "allowed_host": "LAN IP of the RS485 bridge. Leave empty only if you cannot use an allowlist."
+        }
+      }
+    },
+    "abort": {
+      "already_configured": "This listener is already configured"
+    }
+  }
+}

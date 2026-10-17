@@ -1,0 +1,513 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "lovelace.dashboard_pool",
+  "data": {
+    "config": {
+      "views": [
+        {
+          "title": "Pool",
+          "path": "pool",
+          "icon": "mdi:pool",
+          "type": "sections",
+          "max_columns": 4,
+          "sections": [
+            {
+              "type": "grid",
+              "column_span": 4,
+              "cards": [
+                {
+                  "type": "heading",
+                  "heading": "Jetzt",
+                  "heading_style": "title",
+                  "icon": "mdi:waves"
+                }
+              ]
+            },
+            {
+              "type": "grid",
+              "columns": 4,
+              "cards": [
+                {
+                  "type": "tile",
+                  "entity": "sensor.aseko_display_rs485_ph",
+                  "name": "pH",
+                  "icon": "mdi:ph",
+                  "color": "cyan",
+                  "vertical": false
+                },
+                {
+                  "type": "tile",
+                  "entity": "sensor.aseko_display_rs485_chlorine",
+                  "name": "Chlor",
+                  "icon": "mdi:flask-outline",
+                  "color": "teal"
+                },
+                {
+                  "type": "tile",
+                  "entity": "sensor.aseko_display_rs485_water_temperature",
+                  "name": "Wassertemperatur",
+                  "icon": "mdi:thermometer-water",
+                  "color": "blue"
+                },
+                {
+                  "type": "tile",
+                  "entity": "binary_sensor.aseko_display_rs485_filtration",
+                  "name": "Filtration",
+                  "icon": "mdi:pump",
+                  "color": "indigo"
+                }
+              ]
+            },
+            {
+              "type": "grid",
+              "columns": 4,
+              "cards": [
+                {
+                  "type": "tile",
+                  "entity": "binary_sensor.aseko_display_rs485_electrolysis",
+                  "name": "Elektrolyse",
+                  "icon": "mdi:lightning-bolt",
+                  "color": "amber"
+                },
+                {
+                  "type": "tile",
+                  "entity": "binary_sensor.aseko_display_rs485_ph_dosing",
+                  "name": "pH− Dosierung",
+                  "icon": "mdi:water-minus",
+                  "color": "deep-orange"
+                },
+                {
+                  "type": "tile",
+                  "entity": "binary_sensor.aseko_display_rs485_heating",
+                  "name": "Heizung",
+                  "icon": "mdi:radiator",
+                  "color": "red"
+                },
+                {
+                  "type": "tile",
+                  "entity": "binary_sensor.aseko_display_rs485_filling",
+                  "name": "Nachfüllen",
+                  "icon": "mdi:water-plus",
+                  "color": "light-blue"
+                }
+              ]
+            },
+            {
+              "type": "grid",
+              "column_span": 4,
+              "cards": [
+                {
+                  "type": "heading",
+                  "heading": "Sollwerte",
+                  "heading_style": "title",
+                  "icon": "mdi:target"
+                }
+              ]
+            },
+            {
+              "type": "grid",
+              "columns": 3,
+              "cards": [
+                {
+                  "type": "gauge",
+                  "entity": "sensor.aseko_display_rs485_ph",
+                  "name": "pH",
+                  "min": 6.5,
+                  "max": 8.0,
+                  "needle": true,
+                  "segments": [
+                    {
+                      "from": 6.5,
+                      "color": "#e67e22"
+                    },
+                    {
+                      "from": 6.8,
+                      "color": "#27ae60"
+                    },
+                    {
+                      "from": 7.4,
+                      "color": "#e67e22"
+                    }
+                  ]
+                },
+                {
+                  "type": "gauge",
+                  "entity": "sensor.aseko_display_rs485_chlorine",
+                  "name": "Chlor mg/L",
+                  "min": 0,
+                  "max": 3,
+                  "needle": true,
+                  "segments": [
+                    {
+                      "from": 0,
+                      "color": "#e74c3c"
+                    },
+                    {
+                      "from": 0.3,
+                      "color": "#27ae60"
+                    },
+                    {
+                      "from": 1.5,
+                      "color": "#e67e22"
+                    }
+                  ]
+                },
+                {
+                  "type": "gauge",
+                  "entity": "sensor.aseko_display_rs485_water_temperature",
+                  "name": "Temp °C",
+                  "min": 10,
+                  "max": 35,
+                  "needle": true,
+                  "segments": [
+                    {
+                      "from": 10,
+                      "color": "#3498db"
+                    },
+                    {
+                      "from": 18,
+                      "color": "#27ae60"
+                    },
+                    {
+                      "from": 28,
+                      "color": "#e67e22"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "grid",
+              "columns": 3,
+              "cards": [
+                {
+                  "type": "entity",
+                  "entity": "sensor.aseko_display_rs485_ph_setpoint",
+                  "name": "pH Soll",
+                  "icon": "mdi:target"
+                },
+                {
+                  "type": "entity",
+                  "entity": "sensor.aseko_display_rs485_chlorine_setpoint",
+                  "name": "Chlor Soll",
+                  "icon": "mdi:target"
+                },
+                {
+                  "type": "entity",
+                  "entity": "sensor.aseko_display_rs485_temperature_setpoint",
+                  "name": "Temp Soll",
+                  "icon": "mdi:target"
+                }
+              ]
+            },
+            {
+              "type": "grid",
+              "column_span": 4,
+              "cards": [
+                {
+                  "type": "heading",
+                  "heading": "Verlauf 24 Stunden",
+                  "heading_style": "title",
+                  "icon": "mdi:chart-timeline-variant"
+                }
+              ]
+            },
+            {
+              "type": "grid",
+              "column_span": 4,
+              "cards": [
+                {
+                  "type": "custom:apexcharts-card",
+                  "header": {
+                    "show": true,
+                    "title": "pH & Chlor",
+                    "show_states": true,
+                    "colorize_states": true
+                  },
+                  "graph_span": "24h",
+                  "update_interval": "1min",
+                  "apex_config": {
+                    "chart": {
+                      "height": 280
+                    },
+                    "legend": {
+                      "show": true
+                    },
+                    "stroke": {
+                      "curve": "smooth",
+                      "width": 2
+                    },
+                    "tooltip": {
+                      "shared": true
+                    }
+                  },
+                  "yaxis": [
+                    {
+                      "id": "ph",
+                      "min": 6.5,
+                      "max": 8.0,
+                      "decimals": 2,
+                      "apex_config": {
+                        "title": {
+                          "text": "pH"
+                        }
+                      }
+                    },
+                    {
+                      "id": "cl",
+                      "opposite": true,
+                      "min": 0,
+                      "max": "auto",
+                      "decimals": 2,
+                      "apex_config": {
+                        "title": {
+                          "text": "mg/L"
+                        }
+                      }
+                    }
+                  ],
+                  "series": [
+                    {
+                      "entity": "sensor.aseko_display_rs485_ph",
+                      "name": "pH",
+                      "yaxis_id": "ph",
+                      "stroke_width": 3,
+                      "color": "#00bcd4",
+                      "show": {
+                        "extremas": true
+                      }
+                    },
+                    {
+                      "entity": "sensor.aseko_display_rs485_ph_setpoint",
+                      "name": "pH Soll",
+                      "yaxis_id": "ph",
+                      "stroke_width": 1,
+                      "stroke_dash": 4,
+                      "color": "#80deea",
+                      "show": {
+                        "in_header": false
+                      }
+                    },
+                    {
+                      "entity": "sensor.aseko_display_rs485_chlorine",
+                      "name": "Chlor",
+                      "yaxis_id": "cl",
+                      "stroke_width": 3,
+                      "color": "#009688",
+                      "show": {
+                        "extremas": true
+                      }
+                    },
+                    {
+                      "entity": "sensor.aseko_display_rs485_chlorine_setpoint",
+                      "name": "Chlor Soll",
+                      "yaxis_id": "cl",
+                      "stroke_width": 1,
+                      "stroke_dash": 4,
+                      "color": "#80cbc4",
+                      "show": {
+                        "in_header": false
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "grid",
+              "column_span": 4,
+              "cards": [
+                {
+                  "type": "custom:apexcharts-card",
+                  "header": {
+                    "show": true,
+                    "title": "Wassertemperatur",
+                    "show_states": true,
+                    "colorize_states": true
+                  },
+                  "graph_span": "24h",
+                  "update_interval": "1min",
+                  "apex_config": {
+                    "chart": {
+                      "height": 260
+                    },
+                    "stroke": {
+                      "curve": "smooth",
+                      "width": 3
+                    },
+                    "fill": {
+                      "type": "gradient",
+                      "gradient": {
+                        "shadeIntensity": 0.4,
+                        "opacityFrom": 0.45,
+                        "opacityTo": 0.05
+                      }
+                    }
+                  },
+                  "series": [
+                    {
+                      "entity": "sensor.aseko_display_rs485_water_temperature",
+                      "name": "Temp",
+                      "color": "#1e88e5",
+                      "type": "area",
+                      "show": {
+                        "extremas": true
+                      }
+                    },
+                    {
+                      "entity": "sensor.aseko_display_rs485_temperature_setpoint",
+                      "name": "Soll",
+                      "color": "#90caf9",
+                      "stroke_dash": 4,
+                      "stroke_width": 2
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "grid",
+              "column_span": 4,
+              "cards": [
+                {
+                  "type": "heading",
+                  "heading": "7 Tage",
+                  "heading_style": "title",
+                  "icon": "mdi:calendar-week"
+                }
+              ]
+            },
+            {
+              "type": "grid",
+              "column_span": 4,
+              "cards": [
+                {
+                  "type": "custom:apexcharts-card",
+                  "header": {
+                    "show": true,
+                    "title": "pH · Chlor · Temperatur (7 Tage)",
+                    "show_states": false
+                  },
+                  "graph_span": "7d",
+                  "update_interval": "5min",
+                  "apex_config": {
+                    "chart": {
+                      "height": 300
+                    },
+                    "stroke": {
+                      "curve": "smooth",
+                      "width": 2
+                    },
+                    "legend": {
+                      "position": "top"
+                    }
+                  },
+                  "yaxis": [
+                    {
+                      "id": "ph",
+                      "decimals": 2,
+                      "min": "auto",
+                      "max": "auto"
+                    },
+                    {
+                      "id": "cl",
+                      "opposite": true,
+                      "decimals": 2
+                    },
+                    {
+                      "id": "temp",
+                      "opposite": true,
+                      "decimals": 1,
+                      "show": false
+                    }
+                  ],
+                  "series": [
+                    {
+                      "entity": "sensor.aseko_display_rs485_ph",
+                      "name": "pH",
+                      "yaxis_id": "ph",
+                      "color": "#00bcd4",
+                      "group_by": {
+                        "duration": "30m",
+                        "func": "avg"
+                      }
+                    },
+                    {
+                      "entity": "sensor.aseko_display_rs485_chlorine",
+                      "name": "Chlor",
+                      "yaxis_id": "cl",
+                      "color": "#009688",
+                      "group_by": {
+                        "duration": "30m",
+                        "func": "avg"
+                      }
+                    },
+                    {
+                      "entity": "sensor.aseko_display_rs485_water_temperature",
+                      "name": "Temp",
+                      "yaxis_id": "temp",
+                      "color": "#1e88e5",
+                      "group_by": {
+                        "duration": "30m",
+                        "func": "avg"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "grid",
+              "column_span": 4,
+              "cards": [
+                {
+                  "type": "heading",
+                  "heading": "PoolLab (Handmessung)",
+                  "heading_style": "title",
+                  "icon": "mdi:test-tube"
+                }
+              ]
+            },
+            {
+              "type": "grid",
+              "columns": 2,
+              "cards": [
+                {
+                  "type": "entities",
+                  "title": "Letzte PoolLab Messung",
+                  "entities": [
+                    {
+                      "entity": "sensor.pool_gus20_pl_ph",
+                      "name": "pH"
+                    },
+                    {
+                      "entity": "sensor.pool_gus20_pl_chlorine_free",
+                      "name": "Frei Chlor"
+                    },
+                    {
+                      "entity": "sensor.pool_gus20_pl_chlorine_total",
+                      "name": "Gesamt Chlor"
+                    },
+                    {
+                      "entity": "sensor.pool_gus20_pl_alkalinity",
+                      "name": "Alkalität"
+                    },
+                    {
+                      "entity": "sensor.pool_gus20_pl_cyanuric_acid",
+                      "name": "Cyanursäure"
+                    }
+                  ]
+                },
+                {
+                  "type": "markdown",
+                  "content": "**ASIN Salt** liefert Live-Werte über RS485 Display.\n\n**PoolLab** ist die manuelle Referenzmessung.\n\nCloud (Aseko Live) bleibt unverändert über Ethernet."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,16 @@
+"""Constants for Aseko Display RS485."""
+
+DOMAIN = "aseko_display_rs485"
+DEFAULT_HOST = "0.0.0.0"
+DEFAULT_PORT = 47525
+DEFAULT_ALLOWED_HOST = ""
+FRAME_SIZE = 27
+FRAME_START = 0x0A
+READ_TIMEOUT = 30.0
+MAX_READ_TIMEOUTS = 3
+MAX_CLIENTS = 1
+STALE_AFTER = 60
+
+CONF_ALLOWED_HOST = "allowed_host"
+CONF_HOST = "host"
+CONF_PORT = "port"
