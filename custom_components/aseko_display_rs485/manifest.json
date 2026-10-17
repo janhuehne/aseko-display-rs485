@@ -1,12 +1,14 @@
 {
   "domain": "aseko_display_rs485",
   "name": "Aseko Display RS485",
-  "codeowners": ["@janhuehne"],
+  "codeowners": [
+    "@janhuehne"
+  ],
   "config_flow": true,
   "documentation": "https://github.com/janhuehne/aseko-display-rs485",
   "integration_type": "device",
   "iot_class": "local_push",
   "issue_tracker": "https://github.com/janhuehne/aseko-display-rs485/issues",
   "requirements": [],
-  "version": "0.1.0"
+  "version": "0.1.1"
 }
