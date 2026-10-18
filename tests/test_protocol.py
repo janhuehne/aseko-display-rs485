@@ -73,8 +73,29 @@ def test_live_sample_crc_and_decode() -> None:
     assert frame.serial_hex == "06906b20"
     assert frame.serial_number == 110_127_904
     assert frame.level_byte == 0x53
+    assert frame.water_level_cm == pytest.approx(83.0)
+    assert frame.water_level_disconnected is False
+    assert frame.water_level_over_range is False
     assert frame.chlorine_setpoint == pytest.approx(1.0)
     assert frame.disinfectant_setpoint == pytest.approx(1.0)
+
+
+def test_water_level_special_bytes() -> None:
+    disconnected = bytearray(_frame())
+    disconnected[15] = 0xFE
+    disconnected[26] = xor_crc(disconnected)
+    frame = decode_frame(bytes(disconnected))
+    assert frame.water_level_cm is None
+    assert frame.water_level_disconnected is True
+    assert frame.water_level_over_range is False
+
+    over = bytearray(_frame())
+    over[15] = 0xFF
+    over[26] = xor_crc(over)
+    frame = decode_frame(bytes(over))
+    assert frame.water_level_cm is None
+    assert frame.water_level_disconnected is False
+    assert frame.water_level_over_range is True
 
 
 def test_fragmentation_and_coalescing() -> None:

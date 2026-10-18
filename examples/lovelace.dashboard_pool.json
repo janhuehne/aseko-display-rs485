@@ -26,7 +26,7 @@
             },
             {
               "type": "grid",
-              "columns": 4,
+              "columns": 5,
               "cards": [
                 {
                   "type": "tile",
@@ -49,6 +49,13 @@
                   "name": "Wassertemperatur",
                   "icon": "mdi:thermometer-water",
                   "color": "blue"
+                },
+                {
+                  "type": "tile",
+                  "entity": "sensor.aseko_display_rs485_water_level",
+                  "name": "Wasserstand",
+                  "icon": "mdi:waves-arrow-up",
+                  "color": "light-blue"
                 },
                 {
                   "type": "tile",

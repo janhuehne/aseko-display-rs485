@@ -47,6 +47,9 @@ class AsekoDisplayFrame:
     serial_hex: str
     serial_number: int
     level_byte: int
+    water_level_cm: float | None
+    water_level_over_range: bool
+    water_level_disconnected: bool
     ph_setpoint: float | None
     chlorine_setpoint: float | None
     redox_setpoint: float | None
@@ -113,9 +116,16 @@ def decode_frame(frame: bytes) -> AsekoDisplayFrame:
     is_profi = bool(unit_type & 0x80)
 
     # Community captures label bytes 12-17 as serial, but byte 16 carries level.
+    # Level: value in cm; 0xFF = over 200 cm; 0xFE = sensor disconnected.
     serial_bytes = frame[11:15]
     serial_number = int.from_bytes(serial_bytes, "big")
     level_byte = frame[15]
+    water_level_disconnected = level_byte == 0xFE
+    water_level_over_range = level_byte == 0xFF
+    if water_level_disconnected or water_level_over_range:
+        water_level_cm: float | None = None
+    else:
+        water_level_cm = float(level_byte)
 
     ph = _scaled_u16(_u16(frame, 2), 100.0)
     probe_a = _scaled_u16(_u16(frame, 4), 100.0)
@@ -194,6 +204,9 @@ def decode_frame(frame: bytes) -> AsekoDisplayFrame:
         serial_hex=serial_bytes.hex(),
         serial_number=serial_number,
         level_byte=level_byte,
+        water_level_cm=water_level_cm,
+        water_level_over_range=water_level_over_range,
+        water_level_disconnected=water_level_disconnected,
         ph_setpoint=_scaled_u8(frame[16], 10.0),
         chlorine_setpoint=chlorine_setpoint,
         redox_setpoint=redox_setpoint,

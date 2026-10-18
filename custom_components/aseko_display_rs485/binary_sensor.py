@@ -62,6 +62,20 @@ BINARIES: tuple[AsekoBinaryDescription, ...] = (
         value_fn=lambda f: f.ph_minus,
     ),
     AsekoBinaryDescription(
+        key="water_level_disconnected",
+        name="Water level sensor disconnected",
+        device_class=BinarySensorDeviceClass.PROBLEM,
+        entity_category=EntityCategory.DIAGNOSTIC,
+        value_fn=lambda f: f.water_level_disconnected,
+    ),
+    AsekoBinaryDescription(
+        key="water_level_over_range",
+        name="Water level over 200 cm",
+        device_class=BinarySensorDeviceClass.PROBLEM,
+        entity_category=EntityCategory.DIAGNOSTIC,
+        value_fn=lambda f: f.water_level_over_range,
+    ),
+    AsekoBinaryDescription(
         key="salt_hour_dose_exceeded",
         name="Hourly dose exceeded",
         device_class=BinarySensorDeviceClass.PROBLEM,
