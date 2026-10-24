@@ -1,6 +1,6 @@
 # Aseko Display RS485
 
-[![hacs_badge](https://img.shields.io/badge/HACS-Custom-41BDF5.svg)](https://github.com/hacs/integration)
+[![hacs_badge](https://img.shields.io/badge/HACS-Default-41BDF5.svg)](https://github.com/hacs/integration)
 [![GitHub release](https://img.shields.io/github/release/janhuehne/aseko-display-rs485.svg)](https://github.com/janhuehne/aseko-display-rs485/releases)
 [![Validate](https://github.com/janhuehne/aseko-display-rs485/actions/workflows/validate.yml/badge.svg)](https://github.com/janhuehne/aseko-display-rs485/actions/workflows/validate.yml)
 
@@ -31,13 +31,17 @@ remote-server settings. For the cloud TCP stream (port 47524), see
 
 ## Install (HACS)
 
+1. HACS → **Integrations** → search for **Aseko Display RS485**
+2. Download, restart Home Assistant
+3. Settings → Devices & services → **Add integration** → **Aseko Display RS485**
+
+### Fallback: custom repository
+
+If it does not appear in search yet (HACS cache not refreshed):
+
 1. HACS → **Integrations** → ⋮ → **Custom repositories**
 2. URL: `https://github.com/janhuehne/aseko-display-rs485` — category **Integration**
-3. Download **Aseko Display RS485**, restart Home Assistant
-4. Settings → Devices & services → **Add integration** → **Aseko Display RS485**
-
-Once accepted into the [HACS default](https://github.com/hacs/default) list, the
-custom-repository step will no longer be required.
+3. Download **Aseko Display RS485**, then continue from step 2 above
 
 ## Configuration
 
