@@ -5,10 +5,10 @@
     "@janhuehne"
   ],
   "config_flow": true,
-  "documentation": "https://github.com/janhuehne/aseko-display-rs485",
+  "documentation": "https://github.com/janhuehne/ha-aseko-display-rs485",
   "integration_type": "device",
   "iot_class": "local_push",
-  "issue_tracker": "https://github.com/janhuehne/aseko-display-rs485/issues",
+  "issue_tracker": "https://github.com/janhuehne/ha-aseko-display-rs485/issues",
   "requirements": [],
   "version": "0.1.3"
 }

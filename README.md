@@ -1,8 +1,8 @@
 # Aseko Display RS485
 
 [![hacs_badge](https://img.shields.io/badge/HACS-Default-41BDF5.svg)](https://github.com/hacs/integration)
-[![GitHub release](https://img.shields.io/github/release/janhuehne/aseko-display-rs485.svg)](https://github.com/janhuehne/aseko-display-rs485/releases)
-[![Validate](https://github.com/janhuehne/aseko-display-rs485/actions/workflows/validate.yml/badge.svg)](https://github.com/janhuehne/aseko-display-rs485/actions/workflows/validate.yml)
+[![GitHub release](https://img.shields.io/github/release/janhuehne/ha-aseko-display-rs485.svg)](https://github.com/janhuehne/ha-aseko-display-rs485/releases)
+[![Validate](https://github.com/janhuehne/ha-aseko-display-rs485/actions/workflows/validate.yml/badge.svg)](https://github.com/janhuehne/ha-aseko-display-rs485/actions/workflows/validate.yml)
 
 Home Assistant custom integration for **read-only** monitoring of Aseko ASIN Aqua
 units via the **external Display RS485 bus**, typically bridged with a
@@ -40,7 +40,7 @@ remote-server settings. For the cloud TCP stream (port 47524), see
 If it does not appear in search yet (HACS cache not refreshed):
 
 1. HACS → **Integrations** → ⋮ → **Custom repositories**
-2. URL: `https://github.com/janhuehne/aseko-display-rs485` — category **Integration**
+2. URL: `https://github.com/janhuehne/ha-aseko-display-rs485` — category **Integration**
 3. Download **Aseko Display RS485**, then continue from step 2 above
 
 ## Configuration
